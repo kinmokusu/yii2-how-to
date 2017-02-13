@@ -21,6 +21,9 @@ $data = [
  
  
 <h3>View</h3>
-    <?php foreach ($models as $key => $value) :?>
-      <p><?=$value?></p>
-    <?php endforeach?>
+          <?php foreach ($models as $key => $value) :?>
+          <p><?=$value?></p>
+          <?php endforeach?>
+          <div class="pagination col-md-12 text-center">
+              <?= LinkPager::widget(['pagination' => $pages,]);?> 
+          </div>
