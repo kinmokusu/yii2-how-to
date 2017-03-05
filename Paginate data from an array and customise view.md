@@ -8,6 +8,7 @@ $data = [
           'five' => 'data from fifth row',
           ];
 <h3>Controller</h3>
+```php
     public function actionView($id)
     {
         $pages = new Pagination(['totalCount' => count($data), 'defaultPageSize'=>2]);
@@ -17,13 +18,15 @@ $data = [
             'models' => $models,
         ]);
     }
-
+```
  
  
 <h3>View</h3>
+```html
           <?php foreach ($models as $key => $value) :?>
           <p><?=$value?></p>
           <?php endforeach?>
           <div class="pagination col-md-12 text-center">
               <?= LinkPager::widget(['pagination' => $pages,]);?> 
           </div>
+```
