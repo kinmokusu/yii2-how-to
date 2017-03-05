@@ -9,6 +9,8 @@ $data = [
           ];
 <h3>Controller</h3>
 ```php
+use yii\data\Pagination;
+
     public function actionView($id)
     {
         $pages = new Pagination(['totalCount' => count($data), 'defaultPageSize'=>2]);
@@ -23,6 +25,9 @@ $data = [
  
 <h3>View</h3>
 ```html
+<?php
+use yii\widgets\LinkPager;
+?>
           <?php foreach ($models as $key => $value) :?>
           <p><?=$value?></p>
           <?php endforeach?>
