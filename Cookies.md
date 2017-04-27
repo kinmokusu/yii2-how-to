@@ -1,7 +1,7 @@
 <h1>Using Cookies</h1>
 
 <div>
-`
+    `
     public function actionAdd()
     {
         $cookies = \Yii::$app->response->cookies;
@@ -20,5 +20,5 @@
         $cookies = \Yii::$app->response->cookies;
         $cookies->remove('test');
     }
-`
+    `
 </div>
