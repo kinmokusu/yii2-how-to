@@ -1,4 +1,6 @@
 <h1>Paginate data from an array and customise view</h1>
+
+<div>
 Consider the array  
 $data = [
           'one' => 'data from first row',
@@ -7,27 +9,28 @@ $data = [
           'four' => 'data from fourth row',
           'five' => 'data from fifth row',
           ];
+</div>
 <h3>Controller</h3>
-```php
-use yii\data\Pagination;
+          ```php
+          use yii\data\Pagination;
 
-    public function actionView($id)
-    {
-        $pages = new Pagination(['totalCount' => count($data), 'defaultPageSize'=>2]);
-        $models = array_slice($data, $pages->offset, $pages->pageSize);
-        return $this->render('view', [
-            'pages' => $pages,
-            'models' => $models,
-        ]);
-    }
-```
+              public function actionView($id)
+              {
+                  $pages = new Pagination(['totalCount' => count($data), 'defaultPageSize'=>2]);
+                  $models = array_slice($data, $pages->offset, $pages->pageSize);
+                  return $this->render('view', [
+                      'pages' => $pages,
+                      'models' => $models,
+                  ]);
+              }
+          ```
  
  
 <h3>View</h3>
 ```html
-<?php
-use yii\widgets\LinkPager;
-?>
+          <?php
+          use yii\widgets\LinkPager;
+          ?>
           <?php foreach ($models as $key => $value) :?>
           <p><?=$value?></p>
           <?php endforeach?>
