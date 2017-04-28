@@ -12,11 +12,13 @@
               ];
 </div>
 <h3>Controller</h3>
+
 <div>
 
-<?php
-use yii\data\Pagination;
-
+    <?php
+    use yii\widgets\LinkPager;
+    ?>
+    <?php
     public function actionView($id)
     {
         $pages = new Pagination(['totalCount' => count($data), 'defaultPageSize'=>2]);
@@ -25,7 +27,7 @@ use yii\data\Pagination;
             'pages' => $pages,
             'models' => $models,
         ]);
-    }
+    } ?>
 </div>
  
  
